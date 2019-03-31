@@ -6,6 +6,8 @@ from sklearn.datasets import load_boston
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neighbors import KNeighborsRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Ridge
 
 # generate dataset
 X, y = mglearn.datasets.make_forge()
@@ -147,7 +149,6 @@ mglearn.plots.plot_linear_regression_wave()
 plt.show()
 
 # Linear regression aka ordinary least squares
-from sklearn.linear_model import LinearRegression
 X, y = mglearn.datasets.make_wave(n_samples=60)
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
@@ -168,7 +169,6 @@ print("Training set score: {:.2f}".format(lr.score(X_train, y_train)))
 print("Test set score: {:.2f}".format(lr.score(X_test, y_test)))
 
 # Ridge regression
-from sklearn.linear_model import Ridge
 
 ridge = Ridge().fit(X_train, y_train)
 print("Training set score: {:.2f}".format(ridge.score(X_train, y_train)))
